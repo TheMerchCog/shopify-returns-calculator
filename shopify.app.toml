@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "7700392a45c03443c78e7ea08c3dbf22"
+name = "Returns-Calculator"
+application_url = "https://oaks-tracks-volunteers-sleeps.trycloudflare.com"
+embedded = true
+handle = "returns-calculator-1"
+
+[build]
+include_config_on_deploy = true
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2025-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_products,read_orders"
+
+[auth]
+redirect_urls = ["https://oaks-tracks-volunteers-sleeps.trycloudflare.com/auth/callback", "https://oaks-tracks-volunteers-sleeps.trycloudflare.com/auth/shopify/callback", "https://oaks-tracks-volunteers-sleeps.trycloudflare.com/api/auth/callback"]
+
+[pos]
+embedded = false
