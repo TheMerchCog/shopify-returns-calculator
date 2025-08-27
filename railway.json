@@ -1,6 +1,6 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
   "deploy": {
-    "startCommand": "npx prisma migrate deploy && remix-serve build/server/index.js"
+    "startCommand": "npx prisma migrate deploy && echo '--- MIGRATION COMPLETE, ATTEMPTING TO START SERVER ---' && remix-serve build/server/index.js"
   }
 }
