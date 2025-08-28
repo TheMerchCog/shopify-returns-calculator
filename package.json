@@ -2,21 +2,10 @@
   "name": "returns-calculator",
   "private": true,
   "scripts": {
-    "build": "npx prisma generate && remix vite:build",
-    "dev": "shopify app dev",
-    "config:link": "shopify app config link",
-    "generate": "shopify app generate",
-    "deploy": "prisma migrate deploy && npm run start",
-    "config:use": "shopify app config use",
-    "env": "shopify app env",
-    "start": "remix-serve build/server/index.js'",
-    "docker-start": "npm run setup && npm run start",
-    "setup": "prisma generate && prisma migrate deploy",
-    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
-    "shopify": "shopify",
-    "prisma": "prisma migrate deploy",
-    "graphql-codegen": "graphql-codegen",
-    "vite": "vite"
+  "build": "npx prisma generate && remix vite:build",
+  "dev": "shopify app dev",
+  "start": "node build/server/index.js",
+  "deploy": "npx prisma migrate deploy"
   },
   "type": "module",
   "engines": {
