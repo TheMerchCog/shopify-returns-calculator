@@ -1,5 +1,18 @@
 import { createRequestHandler } from "@remix-run/express";
 import express from "express";
+import { execSync } from "child_process";
+
+// Run migrations in production
+if (process.env.NODE_ENV === "production") {
+  console.log("--> Running database migrations...");
+  try {
+    execSync("npx prisma migrate deploy", { stdio: "inherit" });
+    console.log("--> Migrations complete.");
+  } catch (e) {
+    console.error("--> Migration failed:", e);
+    process.exit(1);
+  }
+}
 
 const viteDevServer =
   process.env.NODE_ENV === "production"
