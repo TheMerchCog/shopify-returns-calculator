@@ -4,7 +4,7 @@
   "scripts": {
   "build": "npx prisma generate && remix vite:build",
   "dev": "shopify app dev",
-  "start": "node build/server/index.js",
+  "start": "node ./build/server/index.js",
   "deploy": "npx prisma migrate deploy"
   },
   "type": "module",
