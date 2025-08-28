@@ -44,7 +44,7 @@ app.all(
   })
 );
 
-const port = process.env.PORT ? Number(process.env.PORT) : 3000;
+const port = process.env.RAILWAY_INTERNAL_PORT || process.env.PORT || 3000;
 const host = "0.0.0.0"; // This is crucial for Railway
 
 app.listen(port, host, () => {
