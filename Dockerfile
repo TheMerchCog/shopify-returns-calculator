@@ -1,5 +1,5 @@
 FROM node:18-alpine
-RUN apk add --no-cache openssl
+RUN apk add --no-cache openssl bash
 
 EXPOSE 3000
 
