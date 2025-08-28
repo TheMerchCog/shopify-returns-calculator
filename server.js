@@ -2,7 +2,7 @@ import { createRequestHandler } from "@remix-run/express";
 import express from "express";
 import { execSync } from "child_process";
 
-// Run migrations in production
+// Run database migrations in production
 if (process.env.NODE_ENV === "production") {
   console.log("--> Running database migrations...");
   try {
@@ -45,7 +45,7 @@ app.all(
 );
 
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
-const host = "0.0.0.0";
+const host = "0.0.0.0"; // This is crucial for Railway
 
 app.listen(port, host, () => {
   console.log(`🚀 Express server listening on http://${host}:${port}`);
