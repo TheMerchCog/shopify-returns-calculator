@@ -44,12 +44,6 @@ app.all(
   })
 );
 
-// Add these lines for diagnostics
-console.log("--- DIAGNOSTIC LOGS ---");
-console.log(`process.env.PORT value is: ${process.env.PORT}`);
-console.log(`process.env.RAILWAY_INTERNAL_PORT value is: ${process.env.RAILWAY_INTERNAL_PORT}`);
-console.log("--- END DIAGNOSTIC LOGS ---");
-
 const port = process.env.RAILWAY_INTERNAL_PORT || process.env.PORT || 3000;
 const host = "0.0.0.0"; // This is crucial for Railway
 
