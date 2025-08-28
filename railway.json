@@ -1,6 +1,6 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
   "deploy": {
-    "startCommand": "npm run start"
+    "startCommand": "echo '--- Printing Environment Variables ---' && printenv && echo '--- Starting Server ---' && npm run start"
   }
 }
